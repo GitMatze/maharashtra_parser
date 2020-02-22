@@ -13,7 +13,7 @@ url = 'https://mahasldc.in/wp-content/reports/sldc/mvrreport3.jpg'
 # (x,y,x,y) = upper left, lower right corner of rectangle
 locations = {
 	'MS WIND' : {
-		'label' : (592,934,692,961),
+		'label' : (595,934,692,961),
 		'value' : (785,934,844,959)
 	},
 	'MS SOLAR' : {
@@ -25,7 +25,7 @@ locations = {
 			'value' : (516,987,585,1015)
 	},
 	'GAS' : {
-			'label' : (403,1033,495,1055),
+			'label' : (403,1033,493,1054),
 			'value' : (515,1038,582,1068)
 	},
 	'HYDRO' : {
@@ -41,15 +41,15 @@ locations = {
 			'value' : (1088,581,1173,605)
 	},
 	'GHATGR PUMP' : {
-			'label' : (592,671,735,697),
+			'label' : (594,671,735,697),
 			'value' : (789,675,828,700)
 	},
 	'COGEN' : {
-			'label' : (592,989,670,1011),
+			'label' : (594,989,670,1011),
 			'value' : (789,982,844,1007)
 	},
 	'OTHR+SMHYD' : {
-			'label' : (592,1009,730,1031),
+			'label' : (594,1009,730,1031),
 			'value' : (789,1004,846,1032)
 	},
 	'AEML GEN.' : {
@@ -83,11 +83,13 @@ def recognize(location, source, lang):
 if __name__ == '__main__':
 
 	file = open('logfile_ext.txt', 'a')
-
+	
+	#read image and save to a logfile
 	while (True):
 
 		image = imread(url)
 		image = Image.fromarray(image)  # create PIL image
+		#image = Image.open('error_2020-02-22T19 31.png')
 
 		line = ''
 		labels = []
@@ -135,7 +137,7 @@ if __name__ == '__main__':
 				print('Error: ' + labels[i] + ', ' +key)
 
 		#read daytime from image
-		rec_time, img = recognize( (355,110,524,147), image, 'eng')
+		rec_time, img = recognize( (355,110,524,150), image, 'eng')
 		#plt.imshow(img)
 		#plt.title(rec_time)
 		rec_time = rec_time.replace(' ', 'T')
@@ -151,16 +153,3 @@ if __name__ == '__main__':
 		plt.close()
 
 	file.close()
-
-
-
-
-
-
-
-
-
-
-
-
-
