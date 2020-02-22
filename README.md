@@ -12,7 +12,7 @@ The parser reads both the values and the corresponding labels from the Maharasht
 
 The labels can be used to validate results and to detect potential changes in the underlying picture.
 
-To reduce complexity the parser is provided with a list of the locations. Like shown below, the recognition boils down to simple single-line problems.  
+To reduce complexity the parser is provided with a list of the image regions. Like shown below, the recognition boils down to simple single-line problems.  
 
 ![alt text](https://github.com/GitMatze/maharashtra_parser/blob/master/2020-02-22T17%2000.png)
 
