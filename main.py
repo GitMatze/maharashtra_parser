@@ -260,7 +260,7 @@ def fetch_production(zone_key='GE', session=None, target_datetime: datetime.date
 
 	#Sum over all production types is expected to equal the total demand
 	demand_diff = sum( data['production'].values() ) - values['DEMAND']
-	assert (abs( demand_diff) < 5), \
+	assert (abs( demand_diff) < 30), \
 		'Production types do not add up to total demand. Difference: {}'.format(demand_diff)
 
 	return data
